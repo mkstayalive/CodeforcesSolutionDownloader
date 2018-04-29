@@ -60,9 +60,8 @@ for submission in submissions:
         submission_info = urllib.urlopen(submission_full_url).read()
         soup = BeautifulSoup(submission_info, 'html.parser')
         submission_text = soup.find('pre', id='program-source-text')
-        result = submission_text.encode_contents()
+        result = submission_text.text.replace('\r', '')
         ext = get_ext(comp_lang)
-        
         new_directory = base_dir + '/' + str(con_id)
         if not os.path.exists(new_directory):
             os.makedirs(new_directory)
