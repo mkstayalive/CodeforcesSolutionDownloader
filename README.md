@@ -1,6 +1,22 @@
 CodeforcesSolutionDownloader
 ============================
 
-a small script for downloading ACCEPTED solutions from codeforces.com
+A small script for downloading *ACCEPTED* solutions from codeforces.com
 
-Change the handle variable's value to your handle and then run main.py. It will create folders with the CF rounds  and place your solutions there.
+Install the dependency `bs4`
+```
+pip install bs4
+```
+
+Run main.py and pass the user handle as argument
+
+```
+python main.py <user_handle>
+```
+
+For example,
+```
+python main.py Petr
+```
+
+It will create folders with the user handle and Codeforces rounds under `Solutions` folder and place the solutions there.
