@@ -69,7 +69,7 @@ for submission in submissions:
         os.makedirs(new_directory)
     prob_name = re.sub(r'[\\/*?:"<>|]',"", prob_name)
     file = open(new_directory + '/' + prob_id + ' [' + prob_name.encode('utf-8') + ']' + '.' + ext, 'w')
-    file.write(result)
+    file.write(result.encode('utf-8'))
     file.close()
 end_time = time.time()
 
