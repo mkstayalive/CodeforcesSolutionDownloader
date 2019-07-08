@@ -3,7 +3,6 @@ import json
 import sys
 import time, os
 from bs4 import BeautifulSoup
-import codecs
 
 MAX_SUBS = 1000000
 
@@ -61,14 +60,14 @@ for submission in submissions:
     soup = BeautifulSoup(submission_info, 'html.parser')
     submission_text = soup.find('pre', id='program-source-text')
     if submission_text is None:
-        print 'Could not fetch solution %d', sub_id
+        print 'Could not fectch solution %d', sub_id
         continue
     result = submission_text.text.replace('\r', '')
     ext = get_ext(comp_lang)
     new_directory = base_dir + '/' + str(con_id)
     if not os.path.exists(new_directory):
         os.makedirs(new_directory)
-    file = codecs.open(new_directory + '/' + prob_id + ' [' + prob_name + ']' + '.' + ext, 'w', encoding='utf-8')
+    file = open(new_directory + '/' + prob_id + ' [' + prob_name + ']' + '.' + ext, 'w')
     file.write(result)
     file.close()
 end_time = time.time()
