@@ -67,7 +67,6 @@ for submission in submissions:
     new_directory = base_dir + '/' + str(con_id)
     if not os.path.exists(new_directory):
         os.makedirs(new_directory)
-    prob_name = re.sub(r'[\\/*?:"<>|]',"", prob_name)
     file = open(new_directory + '/' + prob_id + ' [' + prob_name.encode('utf-8') + ']' + '.' + ext, 'w')
     file.write(result.encode('utf-8'))
     file.close()
